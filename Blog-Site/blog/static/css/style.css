@@ -1,0 +1,19 @@
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.site-content {
+  flex: 1;
+}
+
+h1 {
+  color: brown;
+}
