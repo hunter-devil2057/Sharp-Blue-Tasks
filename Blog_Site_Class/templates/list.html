@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock title %}
+{% block content %}
+<!-- Carousel -->
+<div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for item in carousel %}
+        <button 
+        type="button" 
+        data-bs-target="#carouselExampleDark" 
+        data-bs-slide-to="{{forloop.counter0}}" 
+        class="{%if forloop.first%}active{%endif%}" 
+        aria-current="true" 
+        aria-label="Slide {{forloop.counter}}"></button>
+      {% endfor %}
+    </div>
+    <div class="carousel-inner">
+      {% for item in carousel %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}" data-bs-interval="10000">
+        {% if item.image %}
+          <img src="{{item.image.url}}" class="d-block w-100" alt="{{ item.title }}" style="max-height: 520px;">
+        {% endif %}
+        <div class="carousel-caption d-none d-md-block">
+          <h5 style="text-decoration: none; color: white;">
+            <a href = "{% url 'detail' item.pk%}" style="text-decoration: none; color: white; font-weight: bold;">{{item.title}}</a>
+          </h5>
+          <p style="color: white; font-style: italic">{{item.content}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br />
+<!-- nav
+    <ul class="nav" style="background-color: #e3f2fd">
+      <li class="nav-item">
+        <span class="nav-link nav-brand active" aria-current="page">News</span>
+      </li>
+    </ul> -->
+
+<!-- News card -->
+<br />
+<div class="container my-4">
+    <div class="row">
+      {% for item in posts %}
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" class="card-img-top" style="width:350px; margin:auto; height:150px; object-fit: cover;" alt="{{ item.title }}">
+            {% endif %}
+            <div class="card-body">
+              {% comment %} Adding up Category {% endcomment %}
+              <span class="badge bg-primary mb-2">
+                {{ item.get_category_display}}
+              </span><br/>
+              <h5 class="card-title">
+                <a href = "{% url 'detail' item.pk%}" style="text-decoration: none; color: black; font-weight: bold;">
+                {{item.title}}
+                </a>
+              </h5>
+              {% comment %} Don't use Space!!!!! {% endcomment %}
+              <p class="card-text">{{ item.description|truncatewords:20 }}</p>
+  
+              <!-- Like button and count -->
+             <!-- Like & Comment Section -->
+             <div class="d-flex align-items-center justify-content-between">
+              
+                <!-- Like Button -->
+                <div>
+                  <form method="POST" action="{% url 'like' item.pk %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger btn-sm me-2 like-btn">
+                      <i class="fa fa-heart"></i> Like
+                    </button>
+                  </form>
+                  <span class="like-count">{{item.likes}}</span> Likes
+                </div>
+  
+                <!-- Comment Count -->
+                <div>
+                  <i class="fa fa-comment text-primary"></i>
+                  <span class="comment-count">{{item.comments.count}}</span> Comments
+                </div>
+  
+              </div>
+  
+  
+              <!-- Read more link -->
+              <a href="{% url 'detail' item.pk %}" class="btn btn-primary mt-2">Read more</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  
+  </div>
+</div>
+{% endblock content %}

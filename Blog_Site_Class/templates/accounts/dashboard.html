@@ -1,0 +1,4 @@
+{% extends "accounts/home.html" %} {% block content %}
+<h2>Welcome to our Dashboard, {{request.user.username}}</h2>
+<p>Email: {{request.user.email}}</p>
+{% endblock content %}

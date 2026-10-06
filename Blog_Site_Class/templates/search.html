@@ -1,0 +1,65 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  <h5 style="padding-top: 30px">Search Results for {{query}}</h5>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    {% for item in results %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        {% if item.image %}
+        <img
+          src="{{ item.image.url }}"
+          class="card-img-top"
+          alt="{{ item.title }}"
+        />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a
+              href="{% url 'detail' item.pk%}"
+              style="text-decoration: none; color: black; font-weight: bold"
+            >
+              {{item.title}}
+            </a>
+          </h5>
+          {% comment %} Don't use Space!!!!! {% endcomment %}
+          <p class="card-text">{{ item.description|truncatewords:20 }}</p>
+
+          <!-- Like button and count -->
+          <!-- Like & Comment Section -->
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- Like Button -->
+            <div>
+              <button
+                class="btn btn-outline-danger btn-sm me-2 like-btn"
+                data-post-id=""
+              >
+                <i class="fa fa-heart"></i> Like
+              </button>
+              <span class="like-count">{{item.likes}}</span> Likes
+            </div>
+
+            <!-- Comment Count -->
+            <div>
+              <i class="fa fa-comment text-primary"></i>
+              <span class="comment-count">{{item.comments.count}}</span>
+              Comments
+            </div>
+          </div>
+
+          <!-- Read more link -->
+          <a href="{% url 'detail' item.pk %}" class="btn btn-primary mt-2"
+            >Read more</a
+          >
+        </div>
+      </div>
+    </div>
+    {%empty%}
+    <h5>Sorry, No Results found for {{query}}....</h5>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

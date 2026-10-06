@@ -1,0 +1,14 @@
+{% extends "accounts/home.html" %} {% block content %}
+<h2>Register Page</h2>
+<form method="POST" action="{% url register %}">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Register</button>
+  {% comment %}
+  <p>UserName:<input type="text" name="username" /></p>
+  <p>Email:<input type="email" name="email" /></p>
+  <p>Password:<input type="password" name="password1" /></p>
+  <p>Confirm Password:<input type="password" name="password2" /></p>
+  <button type="submit">Register</button> {% endcomment %} {% endblock content
+  %}
+</form>
+{% endblock content %}
