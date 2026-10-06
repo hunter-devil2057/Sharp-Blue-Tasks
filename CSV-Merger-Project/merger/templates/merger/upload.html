@@ -1,0 +1,27 @@
+{% extends "merger/base.html" %} {% block content %}
+<div class="card">
+  <p>
+    Upload CSV files with rows you want to stack. The app concatenates them down
+    the rows (<code>axis=0</code>) and creates a fresh row index in output.
+    Matching column names line up; columns present in only some files are kept.
+  </p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button class="btn" type="submit">Upload & Merge</button>
+  </form>
+</div>
+
+{% if recent_datasets %}
+<div class="card">
+  <h2>Recent merges</h2>
+  <ul>
+    {% for ds in recent_datasets %}
+    <li>
+      <a href="{% url 'view_dataset' ds.pk %}">{{ ds.name }}</a>
+      — {{ ds.row_count }} rows, {{ ds.column_count }} columns ({{
+      ds.uploaded_at|date:"Y-m-d H:i" }})
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %} {% endblock %}

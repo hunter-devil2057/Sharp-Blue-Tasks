@@ -1,0 +1,20 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}CSV Merger{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'merger/css/style.css' %}" />
+  </head>
+  <body>
+    <h1><strong>CSV Row Concatenation Tool</strong></h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="{{ message.tag }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% block content %}{% endblock %}
+  </body>
+</html>
