@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Your email: {{ user.email }}</p>
+    {% comment %} <form method="POST" action="{% url 'logout' %}"> {% endcomment %}
+    <form method="POST" action="{% url 'dashboard' %}">
+      {% csrf_token %}
+      <button type="submit">Logout</button>
+    </form>
+  </body>
+</html>
