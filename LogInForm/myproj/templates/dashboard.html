@@ -8,7 +8,7 @@
     <h2>Welcome, {{ user.username }}!</h2>
     <p>Your email: {{ user.email }}</p>
     {% comment %} <form method="POST" action="{% url 'logout' %}"> {% endcomment %}
-    <form method="POST" action="{% url 'dashboard' %}">
+      <form action="{% url 'logout' %}" method="post" style="display:inline;">
       {% csrf_token %}
       <button type="submit">Logout</button>
     </form>
