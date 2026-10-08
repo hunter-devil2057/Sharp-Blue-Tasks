@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-4">
+  <h1 class="mb-4">Stock Information</h1>
+
+  {% if api %}
+
+  <!-- ========================= -->
+  <!-- Stock Quote -->
+  <!-- ========================= -->
+
+  <h2 class="mb-3">Apple Inc. (AAPL) Quote</h2>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Current Price</th>
+          <th>Change</th>
+          <th>Change %</th>
+          <th>Open</th>
+          <th>Previous Close</th>
+          <th>High</th>
+          <th>Low</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>${{ api.quote.c }}</td>
+          <td>{{ api.quote.d }}</td>
+          <td>{{ api.quote.dp }}%</td>
+          <td>${{ api.quote.o }}</td>
+          <td>${{ api.quote.pc }}</td>
+          <td>${{ api.quote.h }}</td>
+          <td>${{ api.quote.l }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================= -->
+  <!-- Symbol Search Results -->
+  <!-- ========================= -->
+
+  <h2 class="mt-5 mb-3">Symbol Search Results</h2>
+
+  <p>Found {{ api.symbols.count }} results.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Description</th>
+          <th>Display Symbol</th>
+          <th>Symbol</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for stock in api.symbols.result %}
+
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ stock.description }}</td>
+          <td>
+            <strong>{{ stock.displaySymbol }}</strong>
+          </td>
+          <td>{{ stock.symbol }}</td>
+          <td>{{ stock.type }}</td>
+        </tr>
+
+        {% empty %}
+
+        <tr>
+          <td colspan="5" class="text-center">No symbols found.</td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% else %}
+
+  <!-- ========================= -->
+  <!-- Error Message -->
+  <!-- ========================= -->
+
+  <div class="alert alert-danger" role="alert">
+    Unable to fetch stock information.
+  </div>
+
+  {% endif %}
+</div>
+
+{% endblock content %}
