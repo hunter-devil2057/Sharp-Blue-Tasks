@@ -1,0 +1,461 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar weather-navbar">
+    <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand">
+            Weather App
+        </a>
+    </div>
+</nav>
+
+<!-- =========================
+     MAIN CONTAINER
+========================= -->
+
+<div class="container">
+    <!-- =========================
+         SEARCH FORM
+    ========================= -->
+    <div class="row search-container">
+        <div class="col-md-8 col-md-offset-2">
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control"
+                           name="city"
+                           placeholder="Enter city name..."
+                           required>
+                    <span class="input-group-btn">
+                        <button type="submit"
+                                class="btn btn-success">
+                            <span class="glyphicon glyphicon-search"></span>
+                            Search
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================
+         WEATHER INFORMATION
+    ========================= -->
+
+    {% if city_name %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="weather-card">
+                <h2 class="weather-title">
+                    Weather Information
+                </h2>
+                <!-- City -->
+                <div class="city-name">
+                    {{ city_name }}
+                    {% if country_code %}
+                        <small>({{ country_code }})</small>
+                    {% endif %}
+                </div>
+
+                <!-- Temperature -->
+
+                {% if temp %}
+                <div class="temperature-box">
+                    <p class="temperature">
+                        {{ temp }} °C
+                    </p>
+                    {% if weather_description %}
+                    <p class="description">
+                        {{ weather_description }}
+                    </p>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                <!-- =========================
+                     LOCATION
+                ========================= -->
+
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                        Location
+                    </h3>
+
+                    {% if country_code %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Country Code
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ country_code }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if coordinate %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Coordinates
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ coordinate }}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- =========================
+                     TEMPERATURE
+                ========================= -->
+
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-fire"></span>
+                        Temperature
+                    </h3>
+                    {% if temp %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Temperature
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ temp }} °C
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if feels_like %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Feels Like
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ feels_like }} °C
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if temp_min %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Minimum Temperature
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ temp_min }} °C
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if temp_max %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Maximum Temperature
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ temp_max }} °C
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- =========================
+                     WEATHER
+                ========================= -->
+
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-cloud"></span>
+                        Weather
+                    </h3>
+
+                    {% if weather_main %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Weather
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ weather_main }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if weather_description %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Description
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ weather_description }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if weather_icon %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Weather Icon
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ weather_icon }}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- =========================
+                     ATMOSPHERE
+                ========================= -->
+
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-tint"></span>
+                        Atmosphere
+                    </h3>
+                    {% if humidity %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Humidity
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ humidity }}%
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if pressure %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Pressure
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ pressure }} hPa
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if sea_level %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Sea Level Pressure
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ sea_level }} hPa
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if ground_level %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Ground Level Pressure
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ ground_level }} hPa
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if visibility %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Visibility
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ visibility }} m
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- =========================
+                     WIND
+                ========================= -->
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-transfer"></span>
+                        Wind
+                    </h3>
+                    {% if wind_speed %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Wind Speed
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ wind_speed }} m/s
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if wind_direction %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Wind Direction
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ wind_direction }}°
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if wind_gust %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Wind Gust
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ wind_gust }} m/s
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- =========================
+                     OTHER INFORMATION
+                ========================= -->
+
+                <div class="weather-section">
+                    <h3 class="weather-section-title">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                        Other Information
+                    </h3>
+                    {% if rain %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Rain (1 hour)
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ rain }} mm
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if cloudiness %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Cloudiness
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ cloudiness }}%
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if timezone %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Timezone
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ timezone }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if sunrise %}
+                    <div class="weather-info row">
+                        <div class="col-xs-6 weather-label">
+                            Sunrise
+                        </div>
+                        <div class="col-xs-6 weather-value">
+                            {{ sunrise }}
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    {% if sunset %}
+
+                    <div class="weather-info row">
+
+                        <div class="col-xs-6 weather-label">
+                            Sunset
+                        </div>
+
+                        <div class="col-xs-6 weather-value">
+                            {{ sunset }}
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <!-- =========================
+         EMPTY STATE
+    ========================= -->
+
+    <div class="row">
+
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="empty-message">
+
+                <span class="glyphicon glyphicon-cloud"></span>
+
+                <h3>
+                    Search for a city
+                </h3>
+
+                <p>
+                    Enter a city name above to see the weather information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+    <p>
+        Weather App &copy; 2026
+    </p>
+
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
