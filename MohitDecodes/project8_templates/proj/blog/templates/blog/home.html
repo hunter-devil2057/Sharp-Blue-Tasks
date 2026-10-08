@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>#1 Template Basics</title>
+  </head>
+  <body>
+    <h1>Template Basics</h1>
+    <!-- This is HTML Comment -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quia id
+      consequatur voluptatibus reprehenderit nulla amet accusamus nisi. Labore,
+      incidunt sed quisquam deleniti officia natus nostrum non tempora doloribus
+      autem.
+    </p>
+    {% comment %} This is Django Template Multi-Line Comment {% endcomment %}
+    {#This is also a comment#}
+    <p>Welcome to the Blog Home Page!</p>
+
+    <!-- Accessing Variables from JSON/API -->
+    <p><strong>Name:</strong> {{name}}</p>
+    <p><strong>Age:</strong> {{age}}</p>
+
+    <!-- Accessing Elements from the List -->
+    {% comment %} List Access: {% endcomment %} {% comment %}
+    <p><strong>Skill:</strong> {{skill}}</p>
+    {% endcomment %}
+    <p><strong>Skill:</strong> [{{skill.0}}, {{skill.1}}, {{skill.2}}]</p>
+    <p><strong>First Skill:</strong> {{skill.0}}</p>
+    <p><strong>Second Skill:</strong> {{skill.1}}</p>
+    <p><strong>Third Skill:</strong> {{skill.2}}</p>
+
+    <!-- Object Attribute -->
+    {% comment %} Object Attribute{% endcomment %}
+    <p><strong>User Name:</strong> {{user.name}}</p>
+    <p><strong>User Age:</strong> {{user.age}}</p>
+
+    {% comment %} Dictionary {% endcomment %}
+    <h2>Blog Information</h2>
+
+    <!-- Escape Filter -->
+    <p><strong>Title:</strong> {{blog.title|escape}}</p>
+    <!-- used to output a variable while forcing HTML escaping on its content. -->
+    <p><strong>Created At:</strong> {{blog.created_at}}</p>
+    <p><strong>Content:</strong> {{blog.content}}</p>
+    <p><strong>Content:</strong> {{blog.content|safe}}</p>
+    <p><strong>Content:</strong> {{blog.content|safe}}</p>
+    <!-- 
+      Safe = 
+      - should be safe in the browser, 
+      - doesn't allows tag to be seen in the browser.
+      -->
+      
+      <!-- Nested Variables -->
+      <p><strong>Author Name:</strong> {{blog.author.name}}</p>
+      <p><strong>Author Email:</strong> {{blog.author.email}}</p>
+
+     <!-- Default Value -->
+      <p><strong>Empty Value:</strong> {{empty_value|default:"No Value Provided"}}</p>
+      <p><strong>Empty Value:</strong> {{empty_value|default_if_none:"No Data"}}</p>
+  </body>
+</html>
