@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1 class="heading">Shipping Record....</h1>
+    <div class="page">
+
+        <!-- action="" means it posts directly back to HomeView's post() method -->
+        <form class="file_upload_form" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %} {# Yo jahiley pani POST form vitra चाहिन्छ #}
+            
+            <div class="file_upload">
+                <label for="uploaded_file" class="upload_json_title">
+                    <strong>Upload JSON File(s): </strong>
+                </label><br/><br/>
+                
+                <!-- Matches name="input_file" in HomeView -->
+                <input type="file" 
+                       id="uploaded_files" 
+                       name="input_file" 
+                       accept=".json,application/json"
+                       required 
+                       multiple/>
+            </div><br/>
+            
+            <div class="submit_btn">
+                <input type="submit" class="submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

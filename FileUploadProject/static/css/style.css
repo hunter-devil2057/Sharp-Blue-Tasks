@@ -1,0 +1,79 @@
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+.page{
+    padding: 30px 40px;
+    width:80%;
+    margin: auto;
+    border: 2px solid brown;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.heading{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 35px;
+    margin-top: 30px;
+}
+
+.upload_json_title{
+    text-align: center;
+    padding:10px 0;
+    font-size: 25px;
+}
+
+.file_upload{
+    text-align: center;
+}
+
+.upload_json_title, .submit_btn{
+    text-align: center;
+    width: 100%; /* Ensures full container width for clean text alignment */
+}
+
+.submit {
+    padding: 10px 30px;
+    border: 2px solid chocolate;
+    background-color: blueviolet;
+    color: blanchedalmond;
+    border-radius: 20px;
+    cursor: pointer; /* Makes it obvious that it is clickable */
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+/* Optional hover state to make the interaction feel live */
+.submit:hover {
+    background-color: #5a189a;
+}
+
+.table_wrapper { overflow-x: auto; }
+
+.shipment_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.shipment_table th, .shipment_table td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+}
+.shipment_table th {
+    background-color: blueviolet;
+    color: blanchedalmond;
+}
+.shipment_table tbody tr:nth-child(even) { background-color: #f5f0ff; }
+.shipment_table tbody tr:hover { background-color: #e6d9ff; }
+.empty { text-align: center; color: #777; }
+
+.link_btn { display: inline-block; text-decoration: none; }
+
+.messages { list-style: none; margin-bottom: 15px; }
+.msg { padding: 10px 15px; border-radius: 6px; margin-bottom: 8px; }
+.msg.success { background: #d4edda; color: #155724; }
+.msg.error   { background: #f8d7da; color: #721c24; }
