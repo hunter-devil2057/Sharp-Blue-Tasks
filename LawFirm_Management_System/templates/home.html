@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to Law Firm Management!</h1>
+  <p class="lead">
+    This is a simple law firm management system built with Django.
+  </p>
+  <hr class="my-4" />
+  <p>Use the navigation menu to manage clients, lawyers, and cases.</p>
+  <a
+    class="btn btn-success btn-lg"
+    href="{% url 'clients:client_list' %}"
+    role="button"
+    >View Clients</a
+  >
+
+  <a
+    class="btn btn-primary btn-lg"
+    href="{% url 'lawyers:lawyer_list' %}"
+    role="button"
+    >View Lawyers</a
+  >
+  <a
+    class="btn btn-primary btn-lg"
+    href="{% url 'cases:case_list' %}"
+    role="button"
+    >View Cases</a
+  >
+</div>
+
+{% endblock %}
