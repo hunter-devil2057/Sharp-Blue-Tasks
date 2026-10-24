@@ -1,0 +1,271 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipment {{ shipment.shipmentNumber }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Top bar -->
+      <div class="topbar">
+        <a href="{% url 'home' %}" class="back-link">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 12H5" />
+            <path d="m12 19-7-7 7-7" />
+          </svg>
+          Search another shipment
+        </a>
+      </div>
+
+      <!-- Hero -->
+      <div class="hero">
+        <div>
+          <div class="label">Shipment Number</div>
+          <h1>{{ shipment.shipmentNumber }}</h1>
+          <div class="carrier">
+            {{ shipment.sealineName }} ({{ shipment.sealine }})
+          </div>
+        </div>
+        <span class="badge fmt">{{ shipment.shippingStatus }}</span>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stats">
+        <div class="stat">
+          <div class="icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+              />
+              <path d="M14 3v6h6" />
+            </svg>
+          </div>
+          <div>
+            <div class="value">{{ shipment.shipmentType }}</div>
+            <div class="name">Shipment Type</div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 8 12 3 3 8v8l9 5 9-5z" />
+              <path d="m3 8 9 5 9-5" />
+              <path d="M12 13v8" />
+            </svg>
+          </div>
+          <div>
+            <div class="value">{{ shipment.container_count }}</div>
+            <div class="name">Containers</div>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+              />
+              <path
+                d="M19.4 14.9 20.9 10a1 1 0 0 0-.7-1.3L12 7 3.8 8.7A1 1 0 0 0 3.1 10l1.5 4.9"
+              />
+            </svg>
+          </div>
+          <div>
+            <div class="value">{{ shipment.vessel_count }}</div>
+            <div class="name">Vessels</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Route -->
+      <div class="card">
+        <h2>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          Route
+        </h2>
+        <div class="route">
+          <div class="port">
+            <div class="role">Port of Loading</div>
+            <div class="name">{{ shipment.pol.name }}</div>
+            <div class="country">{{ shipment.pol.country }}</div>
+            <span class="locode">{{ shipment.pol.locode }}</span>
+            <div class="date">
+              {{ shipment.pol_date|date:"d M Y, H:i"|default:"-" }}
+            </div>
+            {% if shipment.pol_actual %}
+            <span class="badge actual">Actual</span>
+            {% else %}
+            <span class="badge estimated">Estimated</span>
+            {% endif %}
+          </div>
+
+          <div
+            class="track {% if shipment.pod_actual %}done{% elif shipment.pol_actual %}sailing{% else %}pending{% endif %}"
+          >
+            <div class="line"></div>
+            <div class="progress"></div>
+            <div class="ship">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+                />
+                <path
+                  d="M19.4 14.9 20.9 10a1 1 0 0 0-.7-1.3L12 7 3.8 8.7A1 1 0 0 0 3.1 10l1.5 4.9"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <div class="port dest">
+            <div class="role">Port of Discharge</div>
+            <div class="name">{{ shipment.pod.name }}</div>
+            <div class="country">{{ shipment.pod.country }}</div>
+            <span class="locode">{{ shipment.pod.locode }}</span>
+            <div class="date">
+              {{ shipment.pod_date|date:"d M Y, H:i"|default:"-" }}
+            </div>
+            {% if shipment.pod_actual %}
+            <span class="badge actual">Actual</span>
+            {% else %}
+            <span class="badge estimated">Estimated</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Vessels -->
+      <div class="card">
+        <h2>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+            />
+            <path
+              d="M19.4 14.9 20.9 10a1 1 0 0 0-.7-1.3L12 7 3.8 8.7A1 1 0 0 0 3.1 10l1.5 4.9"
+            />
+          </svg>
+          Vessels
+          <span class="count-pill">{{ shipment.vessel_count }}</span>
+        </h2>
+        {% if shipment.vessels.all %}
+        <div class="vessel-grid">
+          {% for vessel in shipment.vessels.all %}
+          <div class="vessel">
+            <div class="num">{{ forloop.counter }}</div>
+            <div class="vname">{{ vessel.name }}</div>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty">No vessels found.</div>
+        {% endif %}
+      </div>
+
+      <!-- Containers -->
+      <div class="card">
+        <h2>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 8 12 3 3 8v8l9 5 9-5z" />
+            <path d="m3 8 9 5 9-5" />
+            <path d="M12 13v8" />
+          </svg>
+          Containers
+          <span class="count-pill">{{ shipment.container_count }}</span>
+        </h2>
+
+        {% for c in shipment.containers.all %}
+        <details class="container-card" {% if forloop.first %}open{% endif %}>
+          <summary class="container-head">
+            <div>
+              <div class="cnum">{{ c.number }}</div>
+              <div class="cmeta">{{ c.isoCode }} &middot; {{ c.sizeType }}</div>
+            </div>
+            <span class="badge {{ c.status|lower }} fmt">{{ c.status }}</span>
+          </summary>
+
+          {% if c.past_events %}
+          <ul class="timeline">
+            {% for e in c.past_events %}
+            <li class="tl-item">
+              <span class="tl-dot {% if e.is_actual %}actual{% endif %}"></span>
+              <div class="tl-body">
+                <div class="tl-desc">{{ e.description }}</div>
+                <div class="tl-meta">
+                  {{ e.date|date:"d M Y, H:i" }}
+                  <span class="tl-ago">{{ e.time_ago }}</span>
+                  {% if not e.is_actual %}<span class="badge estimated"
+                    >Estimated</span
+                  >{% endif %}
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <div class="empty">No events yet.</div>
+          {% endif %}
+        </details>
+        {% empty %}
+        <div class="empty">No containers found.</div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <footer>&copy; Shipment Tracker &middot; Data provided by Sinay</footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Shipment</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="search-page">
+    <div class="container">
+
+        <div class="logo">
+            <!-- Ship icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M19.4 14.9 20.9 10a1 1 0 0 0-.7-1.3L12 7 3.8 8.7A1 1 0 0 0 3.1 10l1.5 4.9"/>
+                <path d="M12 7V3"/>
+                <path d="M8 7V5h8v2"/>
+            </svg>
+        </div>
+
+        <h1>Track Your Shipment</h1>
+        <p class="subtitle">
+            Enter your Bill of Lading or booking number to see the route, vessels
+            and container status in one clear view.
+        </p>
+
+        <div class="card">
+            <h2>Shipment Lookup</h2>
+            <p class="hint">We’ll fetch the latest tracking details from the shipping line.</p>
+
+            {% if error %}
+                <div class="alert" role="alert">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span>{{ error }}</span>
+                </div>
+            {% endif %}
+
+            <form action="" method="POST" id="trackForm">
+                {% csrf_token %}
+
+                <label for="shipmentNum">Shipment Number</label>
+                <div class="input-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input
+                        type="text"
+                        name="shipment_num"
+                        id="shipmentNum"
+                        placeholder="e.g. SYDG03100300"
+                        autocomplete="off"
+                        autofocus
+                        required
+                    />
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                    </svg>
+                    <span class="spinner"></span>
+                    <span id="btnText">Track Shipment</span>
+                </button>
+            </form>
+
+            <div class="examples">
+                Try an example:
+                <span class="chip" data-value="SYDG03100300">SYDG03100300</span>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <h3>Route Details</h3>
+                <p>See the port of loading, port of discharge and their dates.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 8 12 3 3 8v8l9 5 9-5z"/>
+                        <path d="m3 8 9 5 9-5"/>
+                        <path d="M12 13v8"/>
+                    </svg>
+                </div>
+                <h3>Container Status</h3>
+                <p>Check every container’s number, size, type and current status.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                        <path d="M19.4 14.9 20.9 10a1 1 0 0 0-.7-1.3L12 7 3.8 8.7A1 1 0 0 0 3.1 10l1.5 4.9"/>
+                    </svg>
+                </div>
+                <h3>Vessel Info</h3>
+                <p>Know which vessels are carrying your cargo across the sea.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Shipment Tracker &middot; Data provided by Sinay
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
