@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+
+    <style>
+        .success{color: green;}
+    </style>
+  </head>
+  <body>
+    <form action="" method="post" novalidate>
+      <h2>User Registration</h2>
+      {% csrf_token %} 
+      {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+          <p style="color: red;">{{error}}</p>
+        {% endfor %}
+      {% endif %}
+      {% for fm in form %} 
+        {{fm.label_tag}} {{fm}} 
+        {% if fm.errors %}<span style="color: red;">{{ fm.errors|striptags }}</span>{% endif %}<br /><br />
+      {% endfor %}
+      <input type="submit" value="Submit" /> 
+      <a href="{% url 'apps:login' %}">Log In</a>
+    </form>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <small 
+            {% if message.tags %}
+                class="{{message.tags}}"
+            {% endif %}
+                >{{message}}</small>
+        {% endfor %}
+            
+    {% endif %}
+        
+  </body>
+</html>
