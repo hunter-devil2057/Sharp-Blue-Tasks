@@ -1,0 +1,142 @@
+aiohappyeyeballs==2.7.1
+aiohttp==3.14.5
+aiosignal==1.4.0
+annotated-doc==0.0.5
+annotated-types==0.8.0
+anyio==4.16.0
+asttokens @ file:///C:/Users/task_179302522122705/croot/asttokens_1793025385453/work
+async-timeout==4.0.3
+attrs==26.1.0
+cairocffi==1.7.1
+certifi==2026.10.23
+cffi==2.1.1
+charset-normalizer==3.5.2
+click==8.5.1
+cloudpickle @ file:///C:/Users/task_179217352120505/croot/cloudpickle_1792173653150/work
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+comm @ file:///C:/miniconda3/conda-bld/comm_1763119233835/work
+contourpy==1.3.2
+cryptography==50.0.2
+cssselect2==0.10.1
+cycler==0.12.1
+daal4py==2023.1.1
+debugpy @ file:///C:/Users/task_cpYjcXeNQEuUD_1/croot/debugpy_1783355743993/work
+decorator @ file:///C:/Users/task_178169135642048/croot/decorator_1781691427800/work
+defusedxml==0.7.1
+distro==1.9.0
+exceptiongroup @ file:///C:/Users/task_178047840994980/croot/exceptiongroup_1780478501129/work
+executing @ file:///C:/Users/task_179319726613472/croot/executing_1793197415888/work
+faiss-cpu==1.15.1
+filelock==4.1.0
+filetype==1.2.0
+fonttools==4.65.0
+frozenlist==1.8.0
+fsspec==2026.9.0
+google-auth==2.62.1
+google-genai==2.33.0
+greenlet==3.5.6
+h11==0.16.0
+hf-xet==1.8.0
+httpcore==1.0.9
+httpcore2==2.14.0
+httpx==0.28.1
+httpx-sse==0.4.3
+httpx2==2.14.0
+huggingface_hub==2.4.0
+idna==3.20
+ipykernel @ file:///C:/Users/task_S67NtueuRTW9l_0/croot/ipykernel_1785763788073/work
+jedi @ file:///C:/Users/task_179318677622481/croot/jedi_1793186985789/work
+Jinja2==3.1.6
+joblib @ file:///C:/Users/task_179076702561492/croot/joblib_1790767104384/work
+jsonpatch==1.45
+jsonpointer==3.10
+jupyter_client @ file:///C:/Users/task_178885721201410/croot/jupyter_client_1788857924468/work
+jupyter_core @ file:///C:/miniconda3/conda-bld/jupyter_core_1764588347534/work
+jupyterlab_widgets==3.0.17
+kiwisolver==1.5.1
+langchain==1.4.9
+langchain-classic==1.0.8
+langchain-community==0.4.2
+langchain-core==1.7.7
+langchain-google-genai==4.4.3
+langchain-protocol==0.0.21
+langchain-text-splitters==1.1.3
+langgraph==1.2.20
+langgraph-checkpoint==4.3.1
+langgraph-prebuilt==1.1.1
+langgraph-sdk==0.4.14
+langsmith==0.14.17
+load-dotenv==0.1.0
+markdown-it-py==4.2.0
+MarkupSafe==3.0.4
+matplotlib-inline @ file:///C:/Users/task_179337691596568/croot/matplotlib-inline_1793377000828/work
+mdurl==0.1.2
+mkl-service==2.4.0
+mkl_fft @ file:///C:/Users/dev-admin/mkl/mkl_fft_1730823082242/work
+mkl_random @ file:///C:/Users/dev-admin/mkl/mkl_random_1730822522280/work
+mpmath==1.3.0
+multidict==7.1.0
+nest-asyncio2 @ file:///C:/Users/task_LAKaPwEWScSRW_0/croot/nest-asyncio2_1785322593597/work
+networkx==3.4.2
+numpy==1.26.4
+orjson==3.13.0
+ormsgpack==1.12.2
+packaging==26.3
+parso @ file:///C:/Users/task_177867415949181/croot/parso_1778674228605/work
+pillow==12.3.0
+platformdirs @ file:///C:/Users/task_179120561084054/croot/platformdirs_1791205693890/work
+prompt_toolkit @ file:///C:/Users/task_CdZWNtRnQ92v8_0/croot/prompt-toolkit-split_1785325188240/work
+propcache==0.5.4
+psutil @ file:///C:/Users/task_179337999054072/croot/psutil_1793380075545/work
+pure_eval @ file:///C:/Users/task_179120773383878/croot/pure_eval_1791208219466/work
+pyasn1==0.6.5
+pyasn1_modules==0.4.2
+pycparser==3.11
+pydantic==2.14.3
+pydantic-settings==2.15.0
+pydantic_core==2.50.4
+Pygments @ file:///C:/Users/task_179034416073958/croot/pygments_1790344294561/work
+pymupdf==1.28.2
+pyparsing==3.3.3
+python-dateutil @ file:///C:/b/abs_3au_koqnbs/croot/python-dateutil_1716495777160/work
+python-dotenv==1.2.4
+pywin32 @ file:///C:/Users/task_178231563196222/croot/pywin32_1782315862193/work
+PyYAML==6.0.3
+pyzmq @ file:///C:/Users/task_178939057485163/croot/pyzmq_1789390658077/work
+regex==2026.9.29
+requests==2.34.2
+requests-toolbelt==1.0.0
+rich==15.0.0
+safetensors==0.8.0
+scikit-learn==1.5.2
+scikit-learn-intelex==20230426.121158
+scipy==1.13.1
+shellingham==1.5.4
+six @ file:///C:/b/abs_149wuyuo1o/croot/six_1744271521515/work
+sniffio==1.3.1
+SQLAlchemy==2.0.57
+stack_data @ file:///C:/Users/task_179336599473432/croot/stack_data_1793366296209/work
+sympy==1.14.0
+tenacity==9.1.4
+threadpoolctl @ file:///C:/Users/task_179301274856094/croot/threadpoolctl_1793012898135/work
+tinycss2==1.5.1
+tokenizers==0.23.3
+tomli==2.5.0
+torch==2.14.1
+tornado @ file:///C:/Users/task_179085159649956/croot/tornado_1790852170355/work
+tqdm==4.70.1
+traitlets @ file:///C:/Users/task_179301273582731/croot/traitlets_1793012815863/work
+transformers==5.20.2
+truststore==0.10.5
+typer==0.29.0
+typing-inspection==0.4.5
+typing_extensions @ file:///C:/Users/task_EDsWzFOYRby3O_0/croot/typing_extensions_1784101035613/work
+urllib3==2.8.0
+uuid_utils==0.19.0
+wcwidth @ file:///C:/Users/task_179249383908297/croot/wcwidth_1792493929319/work
+webencodings==0.6.1
+websockets==16.1.1
+widgetsnbextension==4.0.16
+xxhash==4.1.0
+yarl==1.25.1
+zstandard==0.25.0
