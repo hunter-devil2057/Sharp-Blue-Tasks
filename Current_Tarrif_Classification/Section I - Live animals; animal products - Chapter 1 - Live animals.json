@@ -1,0 +1,430 @@
+[
+    {
+        "reference_number": "0101",
+        "description": "Live horses, asses, mules and hinnies",
+        "data": [
+            {
+                "reference_number": "0101",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "LIVE HORSES, ASSES, MULES AND HINNIES:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0101.2",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Horses:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0101.21.00",
+                "statistical_code": "21",
+                "unit": "No",
+                "goods": "-- Pure-bred breeding animals",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0101.21.00"
+            },
+            {
+                "reference_number": "0101.29.00",
+                "statistical_code": "23",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0101.29.00"
+            },
+            {
+                "reference_number": "0101.30.00",
+                "statistical_code": "26",
+                "unit": "No",
+                "goods": "- Asses",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0101.30.00"
+            },
+            {
+                "reference_number": "0101.90.00",
+                "statistical_code": "27",
+                "unit": "No",
+                "goods": "- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0101.90.00"
+            }
+        ]
+    },
+    {
+        "reference_number": "0102",
+        "description": "Live bovine animals",
+        "data": [
+            {
+                "reference_number": "0102",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "LIVE BOVINE ANIMALS:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0102.2",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Cattle:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0102.21.00",
+                "statistical_code": "01",
+                "unit": "No",
+                "goods": "-- Pure-bred breeding animals",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 01022100"
+            },
+            {
+                "reference_number": "0102.29.00",
+                "statistical_code": "03",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0102.29.00"
+            },
+            {
+                "reference_number": "0102.3",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Buffalo:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0102.31.00",
+                "statistical_code": "31",
+                "unit": "No",
+                "goods": "-- Pure-bred breeding animals",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0102.31.00"
+            },
+            {
+                "reference_number": "0102.39.00",
+                "statistical_code": "33",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0102.39.00"
+            },
+            {
+                "reference_number": "0102.90.00",
+                "statistical_code": "35",
+                "unit": "No",
+                "goods": "- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0102.90.00"
+            }
+        ]
+    },
+    {
+        "reference_number": "0103",
+        "description": "Live swine",
+        "data": [
+            {
+                "reference_number": "0103",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "LIVE SWINE:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0103.10.00",
+                "statistical_code": "07",
+                "unit": "No",
+                "goods": "- Pure-bred breeding animals",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0103.10.00"
+            },
+            {
+                "reference_number": "0103.9",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Other:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0103.91.00",
+                "statistical_code": "08",
+                "unit": "No",
+                "goods": "-- Weighing less than 50 kg",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0103.91.00"
+            },
+            {
+                "reference_number": "0103.92.00",
+                "statistical_code": "09",
+                "unit": "No",
+                "goods": "-- Weighing 50 kg or more",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0103.92.00"
+            }
+        ]
+    },
+    {
+        "reference_number": "0104",
+        "description": "Live sheep and goats",
+        "data": [
+            {
+                "reference_number": "0104",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "LIVE SHEEP AND GOATS:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0104.10.00",
+                "statistical_code": "10",
+                "unit": "No",
+                "goods": "- Sheep",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0104.10.00"
+            },
+            {
+                "reference_number": "0104.20.00",
+                "statistical_code": "11",
+                "unit": "No",
+                "goods": "- Goats",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0104.20.00"
+            }
+        ]
+    },
+    {
+        "reference_number": "0105",
+        "description": "Live poultry, that is to say, fowls of the species gallus domesticus, ducks, geese, turkeys and guinea fowls",
+        "data": [
+            {
+                "reference_number": "0105",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "LIVE POULTRY, THAT IS TO SAY, FOWLS OF THE SPECIES Gallus domesticus , DUCKS, GEESE, TURKEYS AND GUINEA FOWLS:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0105.1",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Weighing not more than 185 g:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0105.11.00",
+                "statistical_code": "12",
+                "unit": "No",
+                "goods": "-- Fowls of the species Gallus domesticus",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.11.00"
+            },
+            {
+                "reference_number": "0105.12.00",
+                "statistical_code": "17",
+                "unit": "No",
+                "goods": "-- Turkeys",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.12.00"
+            },
+            {
+                "reference_number": "0105.13.00",
+                "statistical_code": "13",
+                "unit": "No",
+                "goods": "-- Ducks",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.13.00"
+            },
+            {
+                "reference_number": "0105.14.00",
+                "statistical_code": "16",
+                "unit": "No",
+                "goods": "-- Geese",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.14.00"
+            },
+            {
+                "reference_number": "0105.15.00",
+                "statistical_code": "19",
+                "unit": "No",
+                "goods": "-- Guinea fowls",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.15.00"
+            },
+            {
+                "reference_number": "0105.9",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Other:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0105.94.00",
+                "statistical_code": "39",
+                "unit": "No",
+                "goods": "-- Fowls of the species Gallus domesticus",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.94.00"
+            },
+            {
+                "reference_number": "0105.99.00",
+                "statistical_code": "15",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0105.99.00"
+            }
+        ]
+    },
+    {
+        "reference_number": "0106",
+        "description": "Other live animals",
+        "data": [
+            {
+                "reference_number": "0106",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "OTHER LIVE ANIMALS:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0106.1",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Mammals:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0106.11.00",
+                "statistical_code": "40",
+                "unit": "No",
+                "goods": "-- Primates",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.11.00"
+            },
+            {
+                "reference_number": "0106.12.00",
+                "statistical_code": "43",
+                "unit": "No",
+                "goods": "-- Whales, dolphins and porpoises (mammals of the order Cetacea ); manatees and dugongs (mammals of the order Sirenia ); seals, sea lions and walruses (mammals of the suborder Pinnipedia )",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.12.00"
+            },
+            {
+                "reference_number": "0106.13.00",
+                "statistical_code": "44",
+                "unit": "No",
+                "goods": "-- Camels and other camelids ( Camelidae )",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.13.00"
+            },
+            {
+                "reference_number": "0106.14.00",
+                "statistical_code": "46",
+                "unit": "No",
+                "goods": "-- Rabbits and hares",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.14.00"
+            },
+            {
+                "reference_number": "0106.19.00",
+                "statistical_code": "48",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.19.00"
+            },
+            {
+                "reference_number": "0106.20.00",
+                "statistical_code": "50",
+                "unit": "No",
+                "goods": "- Reptiles (including snakes and turtles)",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.20.00"
+            },
+            {
+                "reference_number": "0106.3",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Birds:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0106.31.00",
+                "statistical_code": "60",
+                "unit": "No",
+                "goods": "-- Birds of prey",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.31.00"
+            },
+            {
+                "reference_number": "0106.32.00",
+                "statistical_code": "62",
+                "unit": "No",
+                "goods": "-- Psittaciformes (including parrots, parakeets, macaws and cockatoos)",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.32.00"
+            },
+            {
+                "reference_number": "0106.33.00",
+                "statistical_code": "01",
+                "unit": "No",
+                "goods": "-- Ostriches; emus ( Dromaius novaehollandiae )",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.33.00"
+            },
+            {
+                "reference_number": "0106.39.00",
+                "statistical_code": "05",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.39.00"
+            },
+            {
+                "reference_number": "0106.4",
+                "statistical_code": null,
+                "unit": null,
+                "goods": "- Insects:",
+                "rate": null,
+                "tariff_concession_orders": null
+            },
+            {
+                "reference_number": "0106.41.00",
+                "statistical_code": "06",
+                "unit": "No",
+                "goods": "-- Bees",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.41.00"
+            },
+            {
+                "reference_number": "0106.49.00",
+                "statistical_code": "10",
+                "unit": "No",
+                "goods": "-- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.49.00"
+            },
+            {
+                "reference_number": "0106.90.00",
+                "statistical_code": "50",
+                "unit": "No",
+                "goods": "- Other",
+                "rate": "Free",
+                "tariff_concession_orders": "View TCOs for 0106.90.00"
+            }
+        ]
+    }
+]
